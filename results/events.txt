@@ -1,0 +1,92 @@
+Attack 1: GOAL
+   0.60s  PASSER takes control of the ball
+   1.15s  PASSER passes to the shooter (0.73 m/s)
+   1.80s  SHOOTER takes control of the ball
+   2.35s  SHOOTER shoots at y = -0.90 m
+   2.70s  DEFENDER attacks the ball
+   4.15s  DEFENDER drops back to guard
+   4.20s  GOAL: ball crosses the goal line at y = -1.04 m
+
+Attack 2: CLEARED
+   0.60s  PASSER takes control of the ball
+   1.15s  PASSER holds the ball: no pass on yet
+   4.20s  PASSER passes to the shooter (1.03 m/s)
+   4.75s  DEFENDER attacks the ball
+   5.55s  SHOOTER takes control of the ball
+   6.10s  SHOOTER shoots at y = 0.90 m
+   6.10s  DEFENDER blocks the shot and clears
+   6.45s  CLEARED: the ball is safe
+
+Attack 3: GOAL
+   0.60s  PASSER takes control of the ball
+   1.15s  PASSER passes to the shooter (0.79 m/s)
+   1.75s  DEFENDER attacks the ball
+   2.15s  SHOOTER takes control of the ball
+   2.70s  SHOOTER shoots at y = -0.90 m
+   3.95s  DEFENDER drops back to guard
+   4.45s  GOAL: ball crosses the goal line at y = -1.11 m
+
+Attack 4: CLEARED
+   0.60s  PASSER takes control of the ball
+   1.15s  PASSER holds the ball: no pass on yet
+   4.65s  PASSER passes to the shooter (0.85 m/s)
+   5.15s  DEFENDER attacks the ball
+   6.55s  SHOOTER takes control of the ball
+   6.85s  DEFENDER tackles the shooter and clears
+   7.15s  CLEARED: the ball is safe
+
+Attack 5: CLEARED
+   0.60s  PASSER takes control of the ball
+   1.15s  PASSER passes to the shooter (0.70 m/s)
+   1.65s  SHOOTER takes control of the ball
+   2.20s  SHOOTER holds the ball: no clear shot yet
+   5.70s  SHOOTER shoots at y = 0.90 m
+   5.85s  DEFENDER attacks the ball
+   6.20s  DEFENDER blocks the shot and clears
+   6.70s  CLEARED: the ball is safe
+
+Attack 6: GOAL
+   0.60s  PASSER takes control of the ball
+   1.15s  PASSER passes to the shooter (1.05 m/s)
+   2.30s  DEFENDER attacks the ball
+   2.70s  SHOOTER takes control of the ball
+   3.25s  SHOOTER shoots at y = -0.90 m
+   4.45s  DEFENDER drops back to guard
+   4.70s  GOAL: ball crosses the goal line at y = -1.01 m
+
+Attack 7: CLEARED
+   0.00s  DEFENDER attacks the ball
+   0.60s  PASSER takes control of the ball
+   1.15s  PASSER passes to the shooter (0.49 m/s)
+   1.25s  SHOOTER takes control of the ball
+   1.80s  SHOOTER shoots at y = -0.90 m
+   1.80s  DEFENDER blocks the shot and clears
+   1.95s  CLEARED: the ball is safe
+
+Attack 8: GOAL
+   0.60s  PASSER takes control of the ball
+   1.15s  PASSER passes to the shooter (1.05 m/s)
+   2.60s  SHOOTER takes control of the ball
+   3.15s  SHOOTER shoots at y = -0.90 m
+   3.20s  DEFENDER attacks the ball
+   4.50s  DEFENDER drops back to guard
+   4.55s  GOAL: ball crosses the goal line at y = -0.89 m
+
+Attack 9: GOAL
+   0.60s  PASSER takes control of the ball
+   1.15s  PASSER passes to the shooter (0.87 m/s)
+   2.20s  SHOOTER takes control of the ball
+   2.75s  SHOOTER holds the ball: no clear shot yet
+   6.25s  SHOOTER shoots at y = -0.90 m
+   6.35s  DEFENDER attacks the ball
+   7.80s  DEFENDER drops back to guard
+   7.85s  GOAL: ball crosses the goal line at y = -1.15 m
+
+Attack 10: SAVE
+   0.60s  PASSER takes control of the ball
+   1.15s  PASSER passes to the shooter (1.13 m/s)
+   2.20s  DEFENDER attacks the ball
+   2.65s  SHOOTER takes control of the ball
+   3.20s  SHOOTER shoots at y = 0.90 m
+   4.20s  KEEPER saves
+

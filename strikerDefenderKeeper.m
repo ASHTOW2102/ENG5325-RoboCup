@@ -19,15 +19,16 @@ function results = strikerDefenderKeeper(n, firstSeed, animate)
 %   slip through a robot), crossing the goal line, leaving the pitch, or stopping.
 %
 %   Passer    CHASE     walk to the ball and take control of it
-%             DRIBBLE   carry the ball forward, away from the defender, and
-%                       pass once the shooter is onside and either the lane is
-%                       clear, the defender is closing in, or we held it too long
+%             HOLD      stand with the ball and pass once the shooter is onside
+%                       and either the lane is clear, the defender is closing
+%                       in, or we held it too long
 %   Shooter   RUN       find space: level with the defender (onside), not too
 %                       close to goal, where the pass line is far from the defender
 %             RECEIVE   the pass is on its way: go to the ball and take control
-%             DRIBBLE   carry the ball sideways, away from the defender, and shoot
-%                       once there is a clear shot (or under pressure, or too long)
+%             HOLD      stand with the ball and shoot once there is a clear shot
+%                       (or under pressure, or held too long)
 %   A striker needs P.kickPrep seconds after taking control before it can kick.
+%   There is no dribbling: a striker with the ball stays where it is.
 %   Defender  GUARD     stand between the ball and the goal
 %             ATTACK    ball is close: run at it. Any touch clears the ball.
 %   Keeper    slide along the goal line to where the ball will cross it, after
@@ -45,9 +46,8 @@ P.dt = 0.05;           P.maxTime = 25;        % s
 P.goalX = 4.5;         P.goalHalfW = 1.3;     % m
 P.ballR = 0.07;        P.friction = 0.3;      % m, m/s^2
 P.robotR = 0.15;                              % m, strikers and defender
-P.walkV = 0.25;        P.dribbleV = 0.18;     % m/s, strikers
+P.walkV = 0.25;        % m/s, strikers
 P.controlSpeed = 1.0;  % m/s, a striker can only take control of a ball slower than this
-P.carryGap = 0.23;     % m, how far in front of a dribbling striker the ball is
 P.shotSpeed = 2.0;     P.shotNoise = 0.08;    % m/s, rad
 P.passNoise = 0.05;    P.passSpeedNoise = 0.1;% rad, fraction
 P.laneClear = 0.8;     % m, pass if the defender is this far from the pass line
@@ -57,7 +57,6 @@ P.maxHold = 4;         % s, pass or shoot anyway after holding the ball this lon
 P.kickPrep = 0.5;      % s, time to turn and set up a kick after taking control
 P.aimInside = 0.4;     % m, aim at least this far inside the posts
 P.shooterMaxX = 3.0;   % m, the shooter waits at least 1.5 m from the goal line
-P.dribbleMaxX = 3.5;   % m, nobody dribbles closer to the goal than this
 P.onsideMargin = 0.15; % m, the shooter stays this far behind the offside line
 P.keeperX = 4.3;       P.keeperV = 0.3;       P.keeperR = 0.25;  % m, m/s, m
 P.keeperDelay = 0.15;  % s, keeper reaction time after each kick
@@ -75,8 +74,8 @@ for k = 1:n
     r = playOne(P, firstSeed + k - 1, animate);
     results = [results; r]; %#ok<AGROW>
     if n <= 20
-        fprintf('Attack %3d: %-8s %5.1f s  passes %d  shots %d  defender touches %d  dribbling %.1f s\n', ...
-            r.Attack, r.Outcome, r.Seconds, r.Passes, r.Shots, r.DefenderTouches, r.DribbleSeconds);
+        fprintf('Attack %3d: %-8s %5.1f s  passes %d  shots %d  defender touches %d\n', ...
+            r.Attack, r.Outcome, r.Seconds, r.Passes, r.Shots, r.DefenderTouches);
     end
     if animate && k < n, pause(1); end
 end
@@ -97,13 +96,13 @@ end
 function r = playOne(P, seed, animate)
 rng(seed);                                   % same seed = same attack
 W.t = 0;  W.events = {};  W.lastKick = -inf;  W.lastTouch = 'NONE';
-W.passes = 0;  W.shots = 0;  W.touches = 0;  W.dribbleTime = 0;
+W.passes = 0;  W.shots = 0;  W.touches = 0;
 W.defender = struct('pos', randomPoint(P.defenderStart), 'state', 'GUARD');
-W.shooter  = struct('pos', randomPoint(P.shooterStart), 'state', 'RUN', 'held', 0, 'side', 1, 'logged', false);
+W.shooter  = struct('pos', randomPoint(P.shooterStart), 'state', 'RUN', 'held', 0, 'logged', false);
 W.shooter.pos(1) = min(W.shooter.pos(1), W.defender.pos(1) - P.onsideMargin);  % start onside
-W.passer   = struct('pos', randomPoint(P.passerStart), 'state', 'CHASE', 'held', 0, 'side', 1, 'logged', false);
+W.passer   = struct('pos', randomPoint(P.passerStart), 'state', 'CHASE', 'held', 0, 'logged', false);
 W.ball     = struct('pos', W.passer.pos + 0.4 * unit(W.shooter.pos - W.passer.pos), ...
-                    'vel', [0 0], 'owner', '');
+                    'vel', [0 0], 'owner', '');      % owner = the striker holding the ball
 W.keeper   = [P.keeperX 0];
 
 N = round(P.maxTime / P.dt) + 1;
@@ -138,7 +137,7 @@ if isempty(outcome)
 end
 
 r = struct('Attack', seed, 'Outcome', outcome, 'Seconds', W.t, 'Passes', W.passes, ...
-    'Shots', W.shots, 'DefenderTouches', W.touches, 'DribbleSeconds', W.dribbleTime, ...
+    'Shots', W.shots, 'DefenderTouches', W.touches, ...
     'Events', {W.events});
 for j = 1:numel(names), r.(names{j}) = track.(names{j})(1:step, :); end
 end
@@ -151,10 +150,10 @@ switch s.state
     case 'CHASE'
         s.pos = walkTowards(s.pos, b.pos, P.walkV, P.dt);
         if canControl(s, b, P)
-            [s, b] = takeControl(s, b, 'passer', W.defender);
+            [s, b] = takeControl(s, b, 'passer');
             W = logEvent(W, 'PASSER takes control of the ball');
         end
-    case 'DRIBBLE'
+    case 'HOLD'
         s.held = s.held + P.dt;
         R = W.shooter.pos + (P.robotR + P.ballR) * unit([P.goalX 0] - W.shooter.pos);  % shooter's feet
         onside   = W.shooter.pos(1) <= offsideLine(W);
@@ -167,11 +166,8 @@ switch s.state
             s.state = 'DONE';
             W.passes = W.passes + 1;  W.lastKick = W.t;  W.lastTouch = 'PASSER';
             W = logEvent(W, 'PASSER passes to the shooter (%.2f m/s)', norm(b.vel));
-        else
-            if ready && ~s.logged, W = logEvent(W, 'PASSER dribbles: no pass on yet'); s.logged = true; end
-            target = [min(b.pos(1) + 0.4, P.shooterMaxX), clamp(b.pos(2) + 0.5 * s.side, 2.3)];
-            [s, b] = dribble(s, b, target, P);
-            W.dribbleTime = W.dribbleTime + P.dt;
+        elseif ready && ~s.logged
+            W = logEvent(W, 'PASSER holds the ball: no pass on yet');  s.logged = true;
         end
 end
 W.passer = s;  W.ball = b;
@@ -191,10 +187,10 @@ switch s.state
     case 'RECEIVE'
         s.pos = walkTowards(s.pos, b.pos, P.walkV, P.dt);
         if canControl(s, b, P)
-            [s, b] = takeControl(s, b, 'shooter', W.defender);
+            [s, b] = takeControl(s, b, 'shooter');
             W = logEvent(W, 'SHOOTER takes control of the ball');
         end
-    case 'DRIBBLE'
+    case 'HOLD'
         s.held = s.held + P.dt;
         [aim, clearance] = bestAim(W, P);
         pressure = norm(W.defender.pos - b.pos) < P.pressureDist;
@@ -204,11 +200,8 @@ switch s.state
             s.state = 'DONE';
             W.shots = W.shots + 1;  W.lastKick = W.t;  W.lastTouch = 'SHOOTER';
             W = logEvent(W, 'SHOOTER shoots at y = %.2f m', aim(2));
-        else
-            if ready && ~s.logged, W = logEvent(W, 'SHOOTER dribbles: no clear shot yet'); s.logged = true; end
-            target = [min(b.pos(1) + 0.3, P.dribbleMaxX), clamp(b.pos(2) + 0.5 * s.side, 1.8)];
-            [s, b] = dribble(s, b, target, P);
-            W.dribbleTime = W.dribbleTime + P.dt;
+        elseif ready && ~s.logged
+            W = logEvent(W, 'SHOOTER holds the ball: no clear shot yet');  s.logged = true;
         end
 end
 W.shooter = s;  W.ball = b;
@@ -272,7 +265,7 @@ end
 
 
 function W = rollBall(W, P)
-if ~isempty(W.ball.owner), return; end       % a dribbled ball moves with its striker
+if ~isempty(W.ball.owner), return; end       % a held ball stays at the striker's feet
 speed = norm(W.ball.vel);
 if speed > 0, W.ball.vel = W.ball.vel * max(speed - P.friction * P.dt, 0) / speed; end
 W.ball.pos = W.ball.pos + W.ball.vel * P.dt;
@@ -337,17 +330,9 @@ ok = isempty(b.owner) && norm(s.pos - b.pos) <= P.robotR + P.ballR + 0.02 ...
      && norm(b.vel) <= P.controlSpeed;
 end
 
-function [s, b] = takeControl(s, b, who, defender)
+function [s, b] = takeControl(s, b, who)
 b.owner = who;  b.vel = [0 0];
-s.state = 'DRIBBLE';  s.held = 0;  s.logged = false;
-s.side = -sign(defender.pos(2) - b.pos(2));  % dribble away from the defender
-if s.side == 0, s.side = 1; end
-end
-
-function [s, b] = dribble(s, b, target, P)
-s.pos = walkTowards(s.pos, target, P.dribbleV, P.dt);
-b.pos = s.pos + P.carryGap * unit(target - s.pos);
-b.vel = [0 0];
+s.state = 'HOLD';  s.held = 0;  s.logged = false;
 end
 
 function b = kick(b, target, speed, angleNoise, speedNoise)
@@ -409,10 +394,10 @@ function folder = saveResults(results, P)
 folder = fullfile(fileparts(mfilename('fullpath')), 'results');
 if ~exist(folder, 'dir'), mkdir(folder); end
 fid = fopen(fullfile(folder, 'summary.csv'), 'w');
-fprintf(fid, 'Attack,Outcome,Seconds,Passes,Shots,DefenderTouches,DribbleSeconds\n');
+fprintf(fid, 'Attack,Outcome,Seconds,Passes,Shots,DefenderTouches\n');
 for r = results'
-    fprintf(fid, '%d,%s,%.2f,%d,%d,%d,%.2f\n', r.Attack, r.Outcome, r.Seconds, ...
-        r.Passes, r.Shots, r.DefenderTouches, r.DribbleSeconds);
+    fprintf(fid, '%d,%s,%.2f,%d,%d,%d\n', r.Attack, r.Outcome, r.Seconds, ...
+        r.Passes, r.Shots, r.DefenderTouches);
 end
 fclose(fid);
 fid = fopen(fullfile(folder, 'events.txt'), 'w');
