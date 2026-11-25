@@ -1,92 +1,670 @@
-Attack 1: GOAL
-   0.60s  PASSER takes control of the ball
-   1.15s  PASSER passes to the shooter (0.73 m/s)
-   1.80s  SHOOTER takes control of the ball
-   2.35s  SHOOTER shoots at y = -0.90 m
-   2.70s  DEFENDER attacks the ball
-   4.15s  DEFENDER drops back to guard
-   4.20s  GOAL: ball crosses the goal line at y = -1.04 m
-
-Attack 2: CLEARED
-   0.60s  PASSER takes control of the ball
-   1.15s  PASSER holds the ball: no pass on yet
-   4.20s  PASSER passes to the shooter (1.03 m/s)
-   4.75s  DEFENDER attacks the ball
-   5.55s  SHOOTER takes control of the ball
-   6.10s  SHOOTER shoots at y = 0.90 m
-   6.10s  DEFENDER blocks the shot and clears
-   6.45s  CLEARED: the ball is safe
-
-Attack 3: GOAL
-   0.60s  PASSER takes control of the ball
-   1.15s  PASSER passes to the shooter (0.79 m/s)
-   1.75s  DEFENDER attacks the ball
-   2.15s  SHOOTER takes control of the ball
-   2.70s  SHOOTER shoots at y = -0.90 m
-   3.95s  DEFENDER drops back to guard
-   4.45s  GOAL: ball crosses the goal line at y = -1.11 m
-
-Attack 4: CLEARED
-   0.60s  PASSER takes control of the ball
-   1.15s  PASSER holds the ball: no pass on yet
-   4.65s  PASSER passes to the shooter (0.85 m/s)
-   5.15s  DEFENDER attacks the ball
-   6.55s  SHOOTER takes control of the ball
-   6.85s  DEFENDER tackles the shooter and clears
-   7.15s  CLEARED: the ball is safe
-
-Attack 5: CLEARED
-   0.60s  PASSER takes control of the ball
-   1.15s  PASSER passes to the shooter (0.70 m/s)
-   1.65s  SHOOTER takes control of the ball
-   2.20s  SHOOTER holds the ball: no clear shot yet
-   5.70s  SHOOTER shoots at y = 0.90 m
-   5.85s  DEFENDER attacks the ball
-   6.20s  DEFENDER blocks the shot and clears
-   6.70s  CLEARED: the ball is safe
-
-Attack 6: GOAL
-   0.60s  PASSER takes control of the ball
-   1.15s  PASSER passes to the shooter (1.05 m/s)
-   2.30s  DEFENDER attacks the ball
-   2.70s  SHOOTER takes control of the ball
-   3.25s  SHOOTER shoots at y = -0.90 m
-   4.45s  DEFENDER drops back to guard
-   4.70s  GOAL: ball crosses the goal line at y = -1.01 m
-
-Attack 7: CLEARED
-   0.00s  DEFENDER attacks the ball
-   0.60s  PASSER takes control of the ball
-   1.15s  PASSER passes to the shooter (0.49 m/s)
-   1.25s  SHOOTER takes control of the ball
-   1.80s  SHOOTER shoots at y = -0.90 m
-   1.80s  DEFENDER blocks the shot and clears
-   1.95s  CLEARED: the ball is safe
-
-Attack 8: GOAL
-   0.60s  PASSER takes control of the ball
-   1.15s  PASSER passes to the shooter (1.05 m/s)
-   2.60s  SHOOTER takes control of the ball
-   3.15s  SHOOTER shoots at y = -0.90 m
-   3.20s  DEFENDER attacks the ball
-   4.50s  DEFENDER drops back to guard
-   4.55s  GOAL: ball crosses the goal line at y = -0.89 m
-
-Attack 9: GOAL
-   0.60s  PASSER takes control of the ball
-   1.15s  PASSER passes to the shooter (0.87 m/s)
-   2.20s  SHOOTER takes control of the ball
-   2.75s  SHOOTER holds the ball: no clear shot yet
-   6.25s  SHOOTER shoots at y = -0.90 m
-   6.35s  DEFENDER attacks the ball
-   7.80s  DEFENDER drops back to guard
-   7.85s  GOAL: ball crosses the goal line at y = -1.15 m
-
-Attack 10: SAVE
-   0.60s  PASSER takes control of the ball
-   1.15s  PASSER passes to the shooter (1.13 m/s)
-   2.20s  DEFENDER attacks the ball
-   2.65s  SHOOTER takes control of the ball
-   3.20s  SHOOTER shoots at y = 0.90 m
-   4.20s  KEEPER saves
+Match 1: Blue 4 - 1 Red
+  00:00.0  KICK-OFF Red
+  00:00.8  Red 4 wins the ball
+  00:01.3  Red 4 passes to Red 3
+  00:02.5  Red 3 receives the pass
+  00:04.7  Red 3 passes to Red 4
+  00:05.2  Red 4 receives the pass
+  00:05.6  Blue 4 tackles Red 4
+  00:05.7  Blue 4 wins the ball
+  00:06.2  Blue 4 kicks it long
+  00:06.6  Red 4 wins the ball
+  00:06.7  Blue 4 tackles Red 4
+  00:06.8  Blue 4 wins the ball
+  00:07.3  Blue 4 kicks it long
+  00:07.7  Red 4 tackles Blue 4
+  00:07.8  Red 4 wins the ball
+  00:08.7  Blue 4 tackles Red 4
+  00:08.8  Blue 4 wins the ball
+  00:09.3  Blue 4 kicks it long
+  00:18.4  Red 2 wins the ball
+  00:18.9  Blue 4 tackles Red 2
+  00:19.0  Blue 4 wins the ball
+  00:19.8  Blue 4 SHOOTS from 3.9 m
+  00:21.6  Red 1 SAVES
+  00:23.1  Red 1 kicks it long
+  00:31.1  Blue 2 wins the ball
+  00:31.1  Red 4 tackles Blue 2
+  00:31.2  Red 4 wins the ball
+  00:31.8  Red 4 kicks it long
+  00:32.1  Blue 2 tackles Red 4
+  00:32.2  Blue 2 wins the ball
+  00:33.1  Red 4 tackles Blue 2
+  00:33.2  Red 4 wins the ball
+  00:33.8  Red 4 kicks it long
+  00:34.1  Blue 2 tackles Red 4
+  00:34.2  Blue 2 wins the ball
+  00:35.1  Red 4 tackles Blue 2
+  00:35.2  Red 4 wins the ball
+  00:35.8  Red 4 kicks it long
+  00:36.1  Blue 2 tackles Red 4
+  00:36.2  Blue 2 wins the ball
+  00:37.1  Red 4 tackles Blue 2
+  00:37.2  Red 4 wins the ball
+  00:37.8  Red 4 kicks it long
+  00:38.1  Blue 2 tackles Red 4
+  00:38.2  Blue 2 wins the ball
+  00:39.3  Blue 2 passes to Blue 3
+  00:39.3  Red 4 intercepts the pass
+  00:39.3  Blue 2 tackles Red 4
+  00:39.4  Blue 2 wins the ball
+  00:40.3  Red 4 tackles Blue 2
+  00:40.4  Red 4 wins the ball
+  00:41.0  Red 4 kicks it long
+  00:41.3  Blue 2 tackles Red 4
+  00:41.4  Blue 2 wins the ball
+  00:42.4  Red 4 tackles Blue 2
+  00:42.5  Red 4 wins the ball
+  00:43.0  Red 4 kicks it long
+  00:43.4  Blue 2 tackles Red 4
+  00:43.5  Blue 2 wins the ball
+  00:44.7  Red 4 tackles Blue 2
+  00:44.7  Red 2 wins the ball
+  00:45.2  Red 2 kicks it long
+  00:50.8  Blue 4 wins the ball
+  00:52.7  Blue 4 kicks it long
+  00:59.6  Red 3 tackles Blue 3
+  00:59.7  Red 3 wins the ball
+  01:00.2  Red 3 kicks it long
+  01:03.4  Blue 2 wins the ball
+  01:03.4  Red 3 tackles Blue 2
+  01:03.5  Red 3 wins the ball
+  01:04.0  Red 3 kicks it long
+  01:04.1  Blue 3 wins the ball
+  01:04.1  Red 3 tackles Blue 3
+  01:04.2  Red 3 wins the ball
+  01:04.4  Blue 2 tackles Red 3
+  01:04.5  Blue 2 wins the ball
+  01:06.2  Blue 2 passes to Blue 4
+  01:08.1  Blue 4 receives the pass
+  01:09.5  Blue 4 kicks it long
+  01:12.0  Red 4 wins the ball
+  01:12.5  Red 4 passes to Red 2
+  01:14.5  Blue 3 intercepts the pass
+  01:15.0  Blue 3 SHOOTS from 3.8 m
+  01:17.2  GOAL! Blue 3   Blue 1 - 0 Red
+  01:20.2  KICK-OFF Red
+  01:20.8  Red 4 wins the ball
+  01:21.3  Red 4 passes to Red 3
+  01:22.4  Red 3 receives the pass
+  01:26.5  Red 3 passes to Red 2
+  01:28.7  Red 2 receives the pass
+  01:32.8  Red 2 passes to Red 4
+  01:34.2  Red 4 receives the pass
+  01:34.8  Red 4 passes to Red 3
+  01:34.8  Blue 4 cuts out the pass
+  01:41.4  Red 3 passes to Red 4
+  01:41.9  Blue 3 intercepts the pass
+  01:42.5  Blue 3 passes to Blue 4
+  01:43.1  Blue 4 receives the pass
+  01:43.7  Blue 4 passes to Blue 3
+  01:43.7  Red 4 intercepts the pass
+  01:43.8  Blue 4 tackles Red 4
+  01:43.9  Blue 4 wins the ball
+  01:44.4  Blue 4 passes to Blue 3
+  01:45.0  Blue 3 receives the pass
+  01:45.6  Blue 3 kicks it long
+  01:49.1  Red 1 wins the ball
+  01:50.6  Red 1 kicks it long
+  01:58.5  Blue 3 tackles Red 3
+  01:58.6  Blue 3 wins the ball
+  01:59.2  Blue 3 kicks it long
+  02:03.6  Red 2 wins the ball
+  02:04.2  Red 2 kicks it long
+  02:05.5  Red 4 passes to Red 3
+  02:05.9  Blue 3 intercepts the pass
+  02:07.2  Blue 3 SHOOTS from 3.8 m
+  02:07.2  Red 2 blocks the shot
+  02:10.0  KICK-IN for Blue at (3.3, 3.0)
+  02:25.7  Blue 4 passes to Blue 3
+  02:27.1  Blue 3 receives the pass
+  02:27.2  Red 4 tackles Blue 3
+  02:27.3  Red 4 wins the ball
+  02:27.9  Red 4 kicks it long
+  02:28.2  Blue 3 tackles Red 4
+  02:28.3  Blue 3 wins the ball
+  02:28.9  Blue 3 SHOOTS from 1.2 m
+  02:28.9  Red 3 blocks the shot
+  02:29.2  Red 1 wins the ball
+  02:30.8  Red 1 kicks it long
+  02:40.2  Red 3 kicks it long
+  02:41.5  Blue 4 wins the ball
+  02:42.2  Blue 4 SHOOTS from 3.8 m
+  02:43.9  Red 1 SAVES
+  02:45.4  Red 1 kicks it long
+  02:52.8  Blue 4 wins the ball
+  02:55.5  Red 2 tackles Blue 4
+  02:55.6  Red 2 wins the ball
+  02:56.2  Red 2 kicks it long
+  02:59.2  Blue 1 wins the ball
+  03:00.8  Blue 1 kicks it long
+  03:04.1  Red 3 tackles Blue 3
+  03:04.2  Red 3 wins the ball
+  03:05.0  Red 3 SHOOTS from 3.9 m
+  03:05.0  Blue 3 blocks the shot
+  03:07.7  KICK-IN for Red at (-1.8, -3.0)
+  03:18.9  Red 3 SHOOTS from 3.7 m
+  03:20.1  Blue 4 blocks the shot
+  03:20.5  Blue 4 wins the ball
+  03:21.0  Red 2 tackles Blue 4
+  03:21.1  Red 2 wins the ball
+  03:21.6  Red 2 SHOOTS from 1.5 m
+  03:22.1  Blue 1 SAVES
+  03:23.6  Blue 1 kicks it long
+  03:28.2  KICK-IN for Red at (-1.3, 3.0)
+  03:36.9  Red 2 wins the ball
+  03:37.4  Red 2 kicks it long
+  03:42.7  Blue 1 wins the ball
+  03:44.2  Blue 1 kicks it long
+  03:45.7  Blue 4 passes to Blue 2
+  03:47.7  Blue 2 receives the pass
+  03:48.2  Blue 2 passes to Blue 3
+  03:48.9  Blue 3 receives the pass
+  03:49.5  Blue 3 passes to Blue 2
+  03:50.2  Blue 2 receives the pass
+  03:50.8  Blue 2 kicks it long
+  03:51.2  Red 3 tackles Blue 2
+  03:51.2  Red 3 wins the ball
+  03:51.8  Red 3 SHOOTS from 3.3 m
+  03:51.8  Blue 2 blocks the shot
+  03:55.2  KICK-IN for Blue at (-1.7, -3.0)
+  04:07.2  Blue 3 wins the ball
+  04:07.8  Blue 3 passes to Blue 4
+  04:08.9  Red 2 intercepts the pass
+  04:09.1  Blue 4 tackles Red 2
+  04:11.0  Blue 3 wins the ball
+  04:11.5  Blue 3 kicks it long
+  04:12.0  Red 3 wins the ball
+  04:12.5  Red 3 SHOOTS from 3.6 m
+  04:14.8  GOAL! Red 3   Blue 1 - 1 Red
+  04:17.8  KICK-OFF Blue
+  04:18.1  Blue 4 wins the ball
+  04:18.6  Blue 4 passes to Blue 3
+  04:19.6  Blue 3 receives the pass
+  04:23.7  Blue 3 passes to Blue 2
+  04:25.7  Blue 2 receives the pass
+  04:29.8  Blue 2 passes to Blue 4
+  04:30.9  Blue 4 receives the pass
+  04:31.7  Red 3 tackles Blue 4
+  04:31.8  Red 3 wins the ball
+  04:32.3  Red 3 kicks it long
+  04:32.7  Blue 4 tackles Red 3
+  04:32.8  Blue 4 wins the ball
+  04:33.7  Red 3 tackles Blue 4
+  04:33.8  Red 3 wins the ball
+  04:34.3  Red 3 kicks it long
+  04:34.7  Blue 4 tackles Red 3
+  04:34.8  Blue 4 wins the ball
+  04:35.7  Red 3 tackles Blue 4
+  04:35.8  Red 3 wins the ball
+  04:36.3  Red 3 kicks it long
+  04:36.7  Blue 4 tackles Red 3
+  04:36.8  Blue 4 wins the ball
+  04:37.7  Red 3 tackles Blue 4
+  04:37.8  Red 3 wins the ball
+  04:38.3  Red 3 kicks it long
+  04:44.2  Blue 2 wins the ball
+  04:44.5  Red 3 tackles Blue 2
+  04:44.6  Red 3 wins the ball
+  04:45.4  Red 3 passes to Red 4
+  04:46.4  Blue 4 intercepts the pass
+  04:48.2  Blue 4 kicks it long
+  04:55.6  Red 2 wins the ball
+  04:59.5  Red 2 kicks it long
+  05:06.5  Blue 3 tackles Red 4
+  05:06.6  Blue 3 wins the ball
+  05:07.2  Blue 3 kicks it long
+  05:11.6  Red 3 wins the ball
+  05:13.1  Red 3 kicks it long
+  05:15.2  Blue 2 wins the ball
+  05:20.0  Blue 2 kicks it long
+  05:25.7  Red 2 wins the ball
+  05:26.2  Red 2 kicks it long
+  05:26.4  Blue 4 tackles Red 2
+  05:26.5  Blue 4 wins the ball
+  05:27.0  Blue 4 SHOOTS from 3.2 m
+  05:28.9  GOAL! Blue 4   Blue 2 - 1 Red
+  05:31.9  KICK-OFF Red
+  05:32.0  Red 4 wins the ball
+  05:32.6  Red 4 passes to Red 3
+  05:33.5  Red 3 receives the pass
+  05:37.6  Red 3 passes to Red 2
+  05:39.6  Red 2 receives the pass
+  05:43.7  Red 2 passes to Red 4
+  05:44.6  Red 4 receives the pass
+  05:45.1  Red 4 kicks it long
+  05:50.8  Blue 1 wins the ball
+  05:52.3  Blue 1 kicks it long
+  05:57.9  Red 2 wins the ball
+  05:58.7  Red 2 passes to Red 4
+  05:59.1  Blue 4 intercepts the pass
+  06:03.4  Blue 4 SHOOTS from 3.9 m
+  06:05.1  Red 1 SAVES
+  06:06.6  Red 1 kicks it long
+  06:13.7  Blue 3 wins the ball
+  06:13.8  Red 2 tackles Blue 3
+  06:13.9  Red 2 wins the ball
+  06:14.8  Blue 3 tackles Red 2
+  06:14.9  Blue 3 wins the ball
+  06:15.5  Blue 3 kicks it long
+  06:20.2  Red 3 wins the ball
+  06:22.9  Red 3 passes to Red 4
+  06:23.4  Blue 4 intercepts the pass
+  06:23.9  Blue 4 SHOOTS from 2.8 m
+  06:25.5  GOAL! Blue 4   Blue 3 - 1 Red
+  06:28.5  KICK-OFF Red
+  06:28.9  Red 4 wins the ball
+  06:29.4  Red 4 passes to Red 3
+  06:30.4  Red 3 receives the pass
+  06:34.5  Red 3 passes to Red 2
+  06:36.5  Red 2 receives the pass
+  06:40.6  Red 2 passes to Red 4
+  06:41.8  Red 4 receives the pass
+  06:42.4  Blue 3 tackles Red 4
+  06:42.5  Blue 3 wins the ball
+  06:43.0  Blue 3 kicks it long
+  06:43.4  Red 4 tackles Blue 3
+  06:43.5  Red 4 wins the ball
+  06:44.4  Blue 3 tackles Red 4
+  06:44.5  Blue 3 wins the ball
+  06:45.0  Blue 3 kicks it long
+  06:50.7  Red 3 wins the ball
+  06:52.2  Red 3 kicks it long
+  06:58.2  Blue 2 wins the ball
+  07:02.2  Blue 2 passes to Blue 4
+  07:04.2  Blue 4 receives the pass
+  07:04.6  Red 4 tackles Blue 4
+  07:04.7  Red 4 wins the ball
+  07:05.2  Red 4 SHOOTS from 3.7 m
+  07:05.2  Blue 4 blocks the shot
+  07:18.1  Blue 3 wins the ball
+  07:18.5  Red 4 tackles Blue 3
+  07:18.6  Red 4 wins the ball
+  07:19.1  Red 4 SHOOTS from 3.1 m
+  07:20.0  Blue 1 SAVES
+  07:21.5  Blue 1 kicks it long
+  07:22.1  Red 3 tackles Blue 2
+  07:22.2  Red 3 wins the ball
+  07:22.7  Red 3 SHOOTS from 1.3 m
+  07:22.7  Blue 2 blocks the shot
+  07:23.6  GOAL KICK for Blue at (-3.5, 1.5)
+  07:24.8  Blue 2 wins the ball
+  07:25.4  Blue 2 kicks it long
+  07:34.8  Red 2 wins the ball
+  07:38.2  Red 2 passes to Red 3
+  07:38.3  Blue 4 intercepts the pass
+  07:38.9  Blue 4 passes to Blue 3
+  07:39.6  Blue 3 receives the pass
+  07:40.1  Blue 3 kicks it long
+  07:43.3  Red 4 wins the ball
+  07:46.0  Red 4 passes to Red 3
+  07:47.2  Red 3 receives the pass
+  07:47.5  Blue 3 tackles Red 3
+  07:47.6  Blue 3 wins the ball
+  07:48.1  Blue 3 kicks it long
+  07:49.8  Blue 3 kicks it long
+  07:55.5  Red 1 wins the ball
+  07:57.0  Red 1 kicks it long
+  08:00.8  KICK-IN for Blue at (0.1, -3.0)
+  08:07.2  Blue 2 wins the ball
+  08:07.8  Blue 2 passes to Blue 4
+  08:08.9  Blue 4 receives the pass
+  08:12.9  Blue 4 passes to Blue 2
+  08:13.5  Blue 2 receives the pass
+  08:13.6  Red 2 tackles Blue 2
+  08:13.7  Red 2 wins the ball
+  08:14.2  Red 2 kicks it long
+  08:18.8  Blue 3 wins the ball
+  08:19.3  Blue 3 kicks it long
+  08:23.9  Red 4 wins the ball
+  08:24.9  Red 4 kicks it long
+  08:29.5  Blue 4 wins the ball
+  08:29.5  Red 4 tackles Blue 4
+  08:33.7  Red 4 wins the ball
+  08:34.0  Blue 4 tackles Red 4
+  08:34.1  Blue 4 wins the ball
+  08:34.6  Blue 4 passes to Blue 2
+  08:35.5  Red 3 intercepts the pass
+  08:37.5  Red 3 SHOOTS from 3.9 m
+  08:38.5  Blue 3 blocks the shot
+  08:40.9  CORNER for Red at (-4.5, 3.0)
+  08:53.7  Red 4 passes to Red 3
+  08:55.1  Red 3 receives the pass
+  08:55.3  Blue 2 tackles Red 3
+  08:55.4  Blue 2 wins the ball
+  08:56.0  Blue 2 kicks it long
+  09:03.6  Red 2 wins the ball
+  09:06.9  Red 2 SHOOTS from 3.5 m
+  09:08.8  GOAL KICK for Blue at (-3.5, -1.5)
+  09:11.9  Blue 1 wins the ball
+  09:13.4  Blue 1 kicks it long
+  09:14.9  Blue 1 kicks it long
+  09:15.1  Red 3 wins the ball
+  09:15.1  Blue 4 tackles Red 3
+  09:15.2  Blue 4 wins the ball
+  09:15.8  Blue 4 passes to Blue 2
+  09:16.6  Blue 2 receives the pass
+  09:17.0  Red 4 tackles Blue 2
+  09:17.1  Red 4 wins the ball
+  09:17.6  Red 4 SHOOTS from 2.4 m
+  09:17.6  Blue 2 blocks the shot
+  09:20.5  KICK-IN for Blue at (-3.6, 3.0)
+  09:29.3  Blue 3 wins the ball
+  09:29.9  Blue 3 kicks it long
+  09:40.5  Red 2 wins the ball
+  09:41.1  Red 2 passes to Red 3
+  09:41.7  Red 3 receives the pass
+  09:42.2  Red 3 passes to Red 4
+  09:43.5  Red 4 receives the pass
+  09:46.9  Blue 3 tackles Red 4
+  09:47.0  Blue 3 wins the ball
+  09:47.5  Blue 3 kicks it long
+  09:55.2  Red 1 wins the ball
+  09:56.7  Red 1 kicks it long
+  10:00.0  HALF TIME   Blue 3 - 1 Red
+  10:00.0  KICK-OFF Blue
+  10:00.5  Blue 4 wins the ball
+  10:01.0  Blue 4 passes to Blue 3
+  10:01.9  Blue 3 receives the pass
+  10:05.9  Blue 3 passes to Blue 2
+  10:08.2  Blue 2 receives the pass
+  10:12.3  Blue 2 passes to Blue 4
+  10:13.7  Blue 4 receives the pass
+  10:14.3  Red 3 tackles Blue 4
+  10:14.4  Red 3 wins the ball
+  10:15.0  Red 3 kicks it long
+  10:15.3  Blue 4 tackles Red 3
+  10:15.4  Blue 4 wins the ball
+  10:16.3  Red 3 tackles Blue 4
+  10:16.4  Red 3 wins the ball
+  10:17.0  Red 3 kicks it long
+  10:21.9  Blue 3 wins the ball
+  10:22.5  Blue 3 kicks it long
+  10:24.2  Red 2 wins the ball
+  10:28.5  Red 2 kicks it long
+  10:29.6  Red 3 passes to Red 4
+  10:30.9  Red 4 receives the pass
+  10:31.4  Red 4 SHOOTS from 3.8 m
+  10:31.4  Blue 4 blocks the shot
+  10:33.8  KICK-IN for Red at (0.2, -3.0)
+  10:42.7  Red 4 kicks it long
+  10:43.3  Blue 4 wins the ball
+  10:43.9  Blue 4 kicks it long
+  10:48.7  Red 2 wins the ball
+  10:53.2  Red 2 kicks it long
+  11:01.8  Blue 2 wins the ball
+  11:02.7  Blue 2 kicks it long
+  11:03.2  Red 3 wins the ball
+  11:03.7  Red 3 SHOOTS from 2.6 m
+  11:04.4  Blue 1 SAVES
+  11:05.9  Blue 1 kicks it long
+  11:09.5  Blue 3 passes to Blue 4
+  11:09.7  Blue 4 receives the pass
+  11:11.2  Blue 4 kicks it long
+  11:20.2  Red 2 wins the ball
+  11:21.1  Blue 4 tackles Red 2
+  11:21.2  Blue 4 wins the ball
+  11:21.8  Blue 4 kicks it long
+  11:31.6  Red 1 wins the ball
+  11:33.1  Red 1 kicks it long
+  11:35.5  Red 3 passes to Red 2
+  11:36.2  Red 2 receives the pass
+  11:36.7  Red 2 kicks it long
+  11:45.0  Blue 3 wins the ball
+  11:48.2  Blue 3 kicks it long
+  11:51.8  Red 4 wins the ball
+  11:52.4  Red 4 passes to Red 2
+  11:53.6  Red 2 receives the pass
+  11:56.7  Red 2 SHOOTS from 3.8 m
+  11:57.2  Blue 3 blocks the shot
+  11:57.6  Blue 3 wins the ball
+  12:00.2  Blue 3 kicks it long
+  12:04.0  Red 4 wins the ball
+  12:06.7  Red 4 kicks it long
+  12:10.7  GOAL KICK for Blue at (3.5, 1.5)
+  12:12.7  Blue 1 wins the ball
+  12:14.2  Blue 1 kicks it long
+  12:19.9  Red 4 wins the ball
+  12:20.2  Blue 2 tackles Red 4
+  12:20.2  Blue 2 wins the ball
+  12:20.8  Blue 2 kicks it long
+  12:34.0  Red 3 wins the ball
+  12:37.8  Red 3 kicks it long
+  12:41.4  Blue 2 tackles Red 3
+  12:41.5  Blue 2 wins the ball
+  12:42.1  Blue 2 passes to Blue 4
+  12:43.8  Blue 4 receives the pass
+  12:46.2  Blue 4 SHOOTS from 3.8 m
+  12:48.5  GOAL! Blue 4   Blue 4 - 1 Red
+  12:51.5  KICK-OFF Red
+  12:51.6  Red 4 wins the ball
+  12:52.1  Red 4 passes to Red 3
+  12:53.1  Red 3 receives the pass
+  12:57.1  Red 3 passes to Red 2
+  12:59.3  Red 2 receives the pass
+  13:03.4  Red 2 passes to Red 4
+  13:04.6  Red 4 receives the pass
+  13:05.2  Blue 3 tackles Red 4
+  13:05.2  Blue 3 wins the ball
+  13:05.8  Blue 3 kicks it long
+  13:06.2  Red 4 tackles Blue 3
+  13:06.2  Red 4 wins the ball
+  13:07.2  Blue 3 tackles Red 4
+  13:07.2  Blue 3 wins the ball
+  13:07.8  Blue 3 kicks it long
+  13:12.2  Red 3 wins the ball
+  13:15.7  Red 3 kicks it long
+  13:21.1  Blue 2 wins the ball
+  13:21.6  Blue 2 passes to Blue 3
+  13:23.2  Blue 3 receives the pass
+  13:23.5  Red 3 tackles Blue 3
+  13:23.6  Red 3 wins the ball
+  13:24.1  Red 3 SHOOTS from 3.2 m
+  13:24.1  Blue 3 blocks the shot
+  13:25.4  Blue 1 wins the ball
+  13:26.9  Blue 1 kicks it long
+  13:34.0  Red 4 wins the ball
+  13:34.1  Blue 4 tackles Red 4
+  13:34.2  Blue 4 wins the ball
+  13:34.7  Blue 4 kicks it long
+  13:35.1  Red 4 tackles Blue 4
+  13:35.2  Red 4 wins the ball
+  13:38.4  Blue 4 tackles Red 4
+  13:38.5  Blue 4 wins the ball
+  13:39.0  Blue 4 kicks it long
+  13:39.4  Red 4 tackles Blue 4
+  13:39.5  Red 4 wins the ball
+  13:40.4  Blue 4 tackles Red 4
+  13:40.5  Blue 4 wins the ball
+  13:41.0  Blue 4 kicks it long
+  13:41.4  Red 4 tackles Blue 4
+  13:41.5  Red 4 wins the ball
+  13:42.4  Blue 3 tackles Red 4
+  13:42.4  Blue 4 wins the ball
+  13:43.0  Blue 4 kicks it long
+  13:43.4  Red 4 tackles Blue 4
+  13:43.5  Red 4 wins the ball
+  13:44.4  Blue 4 tackles Red 4
+  13:44.5  Blue 4 wins the ball
+  13:45.0  Blue 4 kicks it long
+  13:45.4  Red 4 tackles Blue 4
+  13:45.5  Red 4 wins the ball
+  13:46.0  Red 4 SHOOTS from 3.9 m
+  13:46.0  Blue 4 blocks the shot
+  13:51.4  Red 3 SHOOTS from 2.9 m
+  13:52.8  GOAL KICK for Blue at (3.5, -1.5)
+  13:56.0  Blue 1 wins the ball
+  13:57.5  Blue 1 kicks it long
+  13:58.1  Red 3 wins the ball
+  13:58.2  Blue 2 tackles Red 3
+  13:58.2  Blue 2 wins the ball
+  13:58.8  Blue 2 kicks it long
+  14:01.4  Red 2 wins the ball
+  14:01.9  Red 2 passes to Red 3
+  14:04.9  Blue 3 intercepts the pass
+  14:05.5  Blue 3 kicks it long
+  14:13.3  Red 2 wins the ball
+  14:17.4  Red 2 passes to Red 4
+  14:18.5  Red 4 receives the pass
+  14:19.1  Red 4 kicks it long
+  14:19.2  Blue 4 tackles Red 4
+  14:19.2  Blue 4 wins the ball
+  14:23.5  Red 4 tackles Blue 4
+  14:23.6  Red 4 wins the ball
+  14:24.2  Red 4 kicks it long
+  14:33.9  Blue 2 tackles Red 4
+  14:34.0  Blue 2 wins the ball
+  14:34.5  Blue 2 kicks it long
+  14:42.9  Red 2 wins the ball
+  14:43.0  Blue 3 tackles Red 2
+  14:43.1  Blue 3 wins the ball
+  14:43.7  Blue 3 SHOOTS from 3.3 m
+  14:43.7  Red 2 blocks the shot
+  14:46.7  GOAL KICK for Red at (-3.5, -1.5)
+  14:50.5  Red 1 wins the ball
+  14:52.0  Red 1 kicks it long
+  14:52.6  Blue 2 tackles Red 4
+  14:52.7  Blue 2 wins the ball
+  14:53.2  Blue 2 SHOOTS from 1.9 m
+  14:53.2  Red 4 blocks the shot
+  14:55.7  KICK-IN for Red at (-4.0, -3.0)
+  15:01.2  Red 4 wins the ball
+  15:01.8  Red 4 passes to Red 3
+  15:02.9  Red 2 receives the pass
+  15:05.1  Red 2 kicks it long
+  15:10.1  Blue 4 wins the ball
+  15:15.5  Blue 4 passes to Blue 3
+  15:18.6  Blue 3 receives the pass
+  15:19.1  Blue 3 SHOOTS from 3.0 m
+  15:19.1  Red 3 blocks the shot
+  15:26.2  Red 3 tackles Blue 3
+  15:30.6  Red 3 wins the ball
+  15:30.7  Blue 3 tackles Red 3
+  15:30.8  Blue 3 wins the ball
+  15:32.4  Blue 3 passes to Blue 2
+  15:33.8  Blue 2 receives the pass
+  15:33.9  Red 4 tackles Blue 2
+  15:34.0  Red 4 wins the ball
+  15:34.6  Red 4 kicks it long
+  15:39.5  Blue 4 wins the ball
+  15:40.5  Blue 4 kicks it long
+  15:50.4  Red 2 tackles Blue 2
+  15:50.5  Red 2 wins the ball
+  15:51.1  Red 2 kicks it long
+  15:55.6  Blue 4 wins the ball
+  15:56.1  Blue 4 kicks it long
+  16:00.4  Red 3 wins the ball
+  16:11.4  Blue 4 tackles Red 3
+  16:11.5  Blue 4 wins the ball
+  16:12.0  Blue 4 kicks it long
+  16:12.5  Red 3 tackles Blue 4
+  16:12.6  Red 3 wins the ball
+  16:13.5  Blue 4 tackles Red 3
+  16:13.6  Blue 3 wins the ball
+  16:14.1  Blue 3 kicks it long
+  16:18.8  Red 1 wins the ball
+  16:20.2  Red 1 kicks it long
+  16:23.9  Blue 3 wins the ball
+  16:24.5  Blue 3 passes to Blue 4
+  16:25.6  Blue 4 receives the pass
+  16:26.1  Blue 4 kicks it long
+  16:30.2  Red 1 wins the ball
+  16:31.8  Red 1 kicks it long
+  16:35.6  Blue 4 tackles Red 2
+  16:35.7  Blue 4 wins the ball
+  16:37.0  Blue 4 passes to Blue 3
+  16:37.1  Red 2 intercepts the pass
+  16:37.1  Blue 4 tackles Red 2
+  16:37.2  Blue 4 wins the ball
+  16:40.7  Red 3 tackles Blue 4
+  16:40.8  Red 3 wins the ball
+  16:41.4  Red 3 kicks it long
+  16:46.0  Blue 2 wins the ball
+  16:46.6  Blue 2 kicks it long
+  16:51.2  Blue 3 SHOOTS from 3.7 m
+  16:52.9  Red 1 SAVES
+  16:54.4  Red 1 kicks it long
+  16:59.9  Blue 3 wins the ball
+  17:00.4  Blue 3 SHOOTS from 3.1 m
+  17:01.5  Red 1 SAVES
+  17:03.0  Red 1 kicks it long
+  17:08.5  Red 2 passes to Red 3
+  17:09.1  Red 3 receives the pass
+  17:09.7  Red 3 kicks it long
+  17:09.8  Blue 4 tackles Red 3
+  17:09.9  Blue 4 wins the ball
+  17:10.8  Red 3 tackles Blue 4
+  17:10.9  Red 3 wins the ball
+  17:11.4  Red 3 kicks it long
+  17:11.8  Blue 4 tackles Red 3
+  17:11.9  Blue 4 wins the ball
+  17:12.8  Red 3 tackles Blue 4
+  17:12.9  Red 3 wins the ball
+  17:13.4  Red 3 kicks it long
+  17:23.0  Blue 2 wins the ball
+  17:23.5  Blue 2 kicks it long
+  17:23.9  Red 3 wins the ball
+  17:23.9  Blue 2 tackles Red 3
+  17:24.0  Blue 2 wins the ball
+  17:24.5  Blue 2 kicks it long
+  17:24.9  Red 3 tackles Blue 2
+  17:25.0  Red 3 wins the ball
+  17:25.5  Red 3 passes to Red 2
+  17:26.2  Red 2 receives the pass
+  17:26.7  Red 2 SHOOTS from 3.2 m
+  17:28.0  Blue 1 SAVES
+  17:29.5  Blue 1 kicks it long
+  17:39.3  Red 4 wins the ball
+  17:40.0  Red 4 kicks it long
+  17:45.9  Blue 1 wins the ball
+  17:47.4  Blue 1 kicks it long
+  17:48.8  KICK-IN for Red at (1.7, 3.0)
+  17:55.2  Red 2 wins the ball
+  17:55.7  Red 2 SHOOTS from 3.7 m
+  17:58.5  GOAL KICK for Blue at (3.5, -1.5)
+  18:04.5  Blue 1 wins the ball
+  18:06.0  Blue 1 kicks it long
+  18:14.7  Red 3 wins the ball
+  18:15.2  Red 3 passes to Red 2
+  18:16.5  Red 2 receives the pass
+  18:17.1  Red 2 SHOOTS from 3.5 m
+  18:18.6  Blue 1 SAVES
+  18:20.1  Blue 1 kicks it long
+  18:31.6  Red 4 tackles Blue 3
+  18:31.7  Red 4 wins the ball
+  18:32.2  Red 4 kicks it long
+  18:34.8  Blue 2 wins the ball
+  18:37.0  Blue 2 passes to Blue 4
+  18:37.7  Red 2 intercepts the pass
+  18:38.2  Red 2 SHOOTS from 3.5 m
+  18:38.3  Blue 2 blocks the shot
+  18:41.0  KICK-IN for Red at (3.5, -3.0)
+  18:56.3  Red 2 passes to Red 4
+  18:56.8  Blue 2 cuts out the pass
+  19:00.8  Blue 4 tackles Red 4
+  19:04.7  Blue 3 wins the ball
+  19:05.0  Red 4 tackles Blue 3
+  19:09.0  Red 4 wins the ball
+  19:09.2  Blue 3 tackles Red 4
+  19:13.0  Blue 3 wins the ball
+  19:13.2  Red 4 tackles Blue 3
+  19:13.4  Red 4 wins the ball
+  19:13.9  Red 4 SHOOTS from 2.6 m
+  19:14.4  Blue 4 blocks the shot
+  19:14.8  Blue 4 wins the ball
+  19:15.0  Red 2 tackles Blue 4
+  19:15.2  Red 2 wins the ball
+  19:15.7  Red 2 SHOOTS from 1.5 m
+  19:16.2  Blue 1 SAVES
+  19:17.7  Blue 1 kicks it long
+  19:28.2  Red 3 wins the ball
+  19:33.2  Blue 2 tackles Red 3
+  19:33.3  Blue 2 wins the ball
+  19:33.9  Blue 2 kicks it long
+  19:40.2  Red 4 wins the ball
+  19:45.4  Red 4 kicks it long
+  19:55.1  Blue 4 wins the ball
+  19:57.0  Blue 4 kicks it long
+  19:59.0  Red 4 wins the ball
+  20:00.0  FULL TIME   Blue 4 - 1 Red
 
