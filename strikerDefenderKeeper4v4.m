@@ -7,7 +7,8 @@ function results = strikerDefenderKeeper4v4(n, firstSeed, animate)
 %   strikerDefenderKeeper4v4(1, 7)       replay match 7 exactly (match k uses random seed k)
 %   results = strikerDefenderKeeper4v4(20, 1, false)   no drawing, just return the results
 %
-%   Up to 3 matches are animated by default. When more than one match is
+%   Up to 3 matches are animated by default, in real time (set P.playbackSpeed
+%   to watch faster or slower). When more than one match is
 %   played, the results are saved in a 'results4v4' folder next to this file:
 %   a summary table (CSV), an event log (TXT), every trajectory (MAT) and an
 %   overview picture (PNG).
@@ -91,7 +92,8 @@ P.restartWait = 10;    % s, ...for at most this long
 P.kickerStart   = [-0.8 -0.4; -0.3 0.3];      % striker 1 of the team kicking off
 P.strikerStart  = [-2.0 -1.0; -1.5 1.5];      % all other strikers
 P.defenderStart = [-3.2 -2.5; -1.0 1.0];
-P.drawEvery = 3;       % draw every 3rd step when animating
+P.drawEvery = 2;       % draw every 2nd step when animating (10 frames per second)
+P.playbackSpeed = 1;   % animation speed: 1 = real time, 2 = twice as fast, 0.5 = slow motion
 
 %% Play
 results = [];
@@ -135,7 +137,9 @@ W = kickoff(W, P, 1);                        % BLUE kicks off
 N = round(P.matchTime / P.dt) + 1;
 track.ball = nan(N, 2);  track.bots = nan(N, 16);   % bot i: columns 2i-1 (x) and 2i (y)
 if animate
-    figure(1); clf; set(gcf, 'Color', [0.96 0.97 0.98], 'Position', [60 80 1350 620]);
+    G = initScene(W, P);                     % draw the pitch once, keep handles to the robots
+    clock0 = tic;  paused = 0;               % wall clock, for real-time playback
+    frameTime = P.drawEvery * P.dt / P.playbackSpeed;
 end
 
 for step = 1:N
@@ -151,16 +155,22 @@ for step = 1:N
     if W.ball.owner, t = W.bots(W.ball.owner).team;
     elseif W.lastTouch, t = W.bots(W.lastTouch).team; else, t = 0; end
     if t, W.poss(t) = W.poss(t) + P.dt; end
-    if animate && (mod(step, P.drawEvery) == 1 || scorer)
-        drawScene(W, P, seed);
+    if animate
+        due  = W.t / P.playbackSpeed + paused;      % when this moment should be on screen
+        late = toc(clock0) - due;
+        if scorer || (mod(step, P.drawEvery) == 1 && late < frameTime)  % behind? skip frames
+            drawScene(W, G, seed);
+            wait = due - toc(clock0);
+            if wait > 0, pause(wait); end           % ahead of real time: wait
+        end
     end
     if scorer
-        if animate, pause(1); end
+        if animate, pause(1);  paused = paused + 1; end
         W = kickoff(W, P, 3 - scorer);       % the team that conceded kicks off
     end
 end
 W = logEvent(W, 'FULL TIME: BLUE %d - %d RED', W.score(1), W.score(2));
-if animate, drawScene(W, P, seed); end
+if animate, drawScene(W, G, seed); end
 
 winner = 'DRAW';
 if W.score(1) > W.score(2), winner = 'BLUE'; elseif W.score(2) > W.score(1), winner = 'RED'; end
@@ -619,30 +629,44 @@ plot(0, 0, 'w+');
 end
 
 
-function drawScene(W, P, seed)
+function G = initScene(W, P)
+% Draw the pitch once and create the robots, ball and text. Each frame then
+% only moves these objects (much faster than redrawing everything).
+figure(1); clf; set(gcf, 'Color', [0.96 0.97 0.98], 'Position', [60 80 1350 620]);
+axes('Position', [0.02 0.08 0.66 0.84]);
 drawPitch(P);
-set(gca, 'Position', [0.02 0.08 0.66 0.84]);
 cols = {[0.15 0.45 1], [0.9 0.2 0.2]};
+a = linspace(0, 2 * pi, 40);  G.circle = [cos(a); sin(a)];
 for i = 1:8
-    s = W.bots(i);  r = P.robotR;
-    if s.role == 'K', r = P.keeperR; end
-    disc(s.pos, r, cols{s.team});
+    s = W.bots(i);
+    G.r(i) = P.robotR;  if s.role == 'K', G.r(i) = P.keeperR; end
+    G.bot(i) = fill(nan(1, 40), nan(1, 40), cols{s.team}, 'EdgeColor', 'w');
     label = s.role;  if label == 'S', label = s.name(end); end
-    text(s.pos(1), s.pos(2), label, 'Color', 'w', 'FontSize', 8, 'FontWeight', 'bold', ...
+    G.lab(i) = text(0, 0, label, 'Color', 'w', 'FontSize', 8, 'FontWeight', 'bold', ...
         'HorizontalAlignment', 'center', 'VerticalAlignment', 'middle');
 end
-disc(W.ball.pos, P.ballR, [1 0.65 0]);
-title(sprintf('Match %d   t = %5.1f s      BLUE %d - %d RED      (BLUE attacks right)', ...
-    seed, W.t, W.score(1), W.score(2)), 'FontSize', 13);
+G.ballR = P.ballR;
+G.ball  = fill(nan(1, 40), nan(1, 40), [1 0.65 0], 'EdgeColor', 'w');
+G.title = title('', 'FontSize', 13);
+G.info  = text(1.02, 1, '', 'Units', 'normalized', 'VerticalAlignment', 'top', ...
+     'FontName', 'FixedWidth', 'FontSize', 9, 'Interpreter', 'none');
+end
+
+
+function drawScene(W, G, seed)
+% Move the robots and ball to their new positions and update the text
+for i = 1:8
+    p = W.bots(i).pos;
+    set(G.bot(i), 'XData', p(1) + G.r(i) * G.circle(1, :), 'YData', p(2) + G.r(i) * G.circle(2, :));
+    set(G.lab(i), 'Position', [p 0]);
+end
+p = W.ball.pos;
+set(G.ball, 'XData', p(1) + G.ballR * G.circle(1, :), 'YData', p(2) + G.ballR * G.circle(2, :));
+set(G.title, 'String', sprintf('Match %d   t = %5.1f s      BLUE %d - %d RED      (BLUE attacks right)', ...
+    seed, W.t, W.score(1), W.score(2)));
 lines = {};
 for i = 1:8, lines{end + 1, 1} = sprintf('%-8s %s', W.bots(i).name, W.bots(i).mode); end %#ok<AGROW>
 lines = [lines; {''; 'EVENTS'}; W.events(max(1, end - 11):end)'];
-text(1.02, 1, lines, 'Units', 'normalized', 'VerticalAlignment', 'top', ...
-     'FontName', 'FixedWidth', 'FontSize', 9, 'Interpreter', 'none');
-hold off; drawnow; pause(0.02);
-end
-
-function disc(p, r, colour)
-a = linspace(0, 2 * pi, 40);
-fill(p(1) + r * cos(a), p(2) + r * sin(a), colour, 'EdgeColor', 'w');
+set(G.info, 'String', lines);
+drawnow;
 end
